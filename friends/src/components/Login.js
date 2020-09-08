@@ -14,6 +14,7 @@ const Login = props => {
 
     const userLogin = e => {
         e.preventDefault();
+       // formState.isLoading = "true";
         console.log("logging in");
         axios
             .post("http://localhost:5000/api/login", formState.credentials)
