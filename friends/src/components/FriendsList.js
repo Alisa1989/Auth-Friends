@@ -34,7 +34,7 @@ const FriendsList = props => {
             </div>
         </div>
             )}
-            <AddFriend />
+            <AddFriend setFriends={setFriends}/>
         </div>
     );
 };

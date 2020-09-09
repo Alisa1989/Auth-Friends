@@ -18,8 +18,10 @@ const Login = props => {
         console.log("logging in");
         axios
             .post("http://localhost:5000/api/login", formState.credentials)
-            .then(res => { localStorage.setItem("token", res.data.payload);
-            props.history.push('/protected');
+            .then(res => { 
+                localStorage.setItem("token", res.data.payload);
+                props.history.push('/protected');
+               // formState.isLoading = false;
         })
             .catch(err => console.log("login api error:", err))
     };

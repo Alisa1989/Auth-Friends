@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-const AddFriend = () => {
+const AddFriend = (props) => {
 
     const [friendForm, setFriendForm] = useState({
         id: "",
@@ -23,7 +23,7 @@ const AddFriend = () => {
         e.preventDefault();
         axiosWithAuth()
             .post("/api/friends", friendForm)
-            .then(response => console.log(response))
+            .then(response => props.setFriends(response.data))
             .catch(error => console.log(error))
     };
 
