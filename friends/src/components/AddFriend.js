@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const AddFriend = (props) => {
-
+    
     const [friendForm, setFriendForm] = useState({
-        id: "",
+        //id: "", server will take care of it
         name: "",
         age: "",
         email: ""
@@ -12,7 +12,7 @@ const AddFriend = (props) => {
 
     const changeHandler = (e) => {
         e.persist();
-        console.log(e.target.name, e.target.value)
+        console.log(e.target.name, e.target.value);
         setFriendForm({
             ...friendForm,
             [e.target.name]: [e.target.value]
@@ -40,7 +40,8 @@ const AddFriend = (props) => {
                     value={friendForm.name}
                 />
             </label>
-            <label>
+            {/* <label>
+                id
                 <input
                     type="text"
                     id="id"
@@ -49,8 +50,9 @@ const AddFriend = (props) => {
                     onChange={changeHandler}
                     value={friendForm.id}
                 />
-            </label>
+            </label> */}
             <label>
+                age
                 <input
                     type="text"
                     id="age"
@@ -61,6 +63,7 @@ const AddFriend = (props) => {
                 />
             </label>
             <label>
+                email
                 <input
                     type="email"
                     id="email"
